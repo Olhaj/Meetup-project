@@ -5,25 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <img src="assets/images/logo.png" alt="logo_meetup">
-            <div>
-                <img src="assets/icons/magnifying_glass.svg" alt="icons/magnifying_glass">
+    <header class="header">
+        <a href="#" class="logo"><img src="assets/images/logo.png" alt="Logo"></a>
+
+        <div class="search_bar">
+            <div class="search_left">
+                <button class="search_left_btn">
+                    <img src="assets/icons/magnifying_glass.svg" alt="Magnifying glass">
+                </button>
                 <input type="text" placeholder="Search events">
+            </div>
+            <div class="search_right">
                 <input type="text" placeholder="Mountain View, CA">
-                <img src="assets/icons/magnifying_glass.svg" alt="magnifying_glass">
+                <button class="search_right_btn" aria-label="Search">
+                    <img src="assets/icons/magnifying_glass.svg" alt="Magnifying glass">
+                </button>
             </div>
-            <div>
-                <img src="assets/icons/globe.svg" alt="Globe">
-                <h3>English</h3>
-                <h3>Log in</h3>
-                <button>Sign up</button>
+        </div>
+
+        <nav class="navigation">
+            <div class="language">
+                <img class="globe_icon" src="assets/icons/globe.svg" alt="Globe">
+                <select class="language_selection" aria-label="English">
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="uk">Українська</option>
+                </select>
             </div>
+            <button class="login_btn" type="submit">Log in</button>
+            <button class="signup_btn" type="reset">Sign up</button>
         </nav>
     </header>
 </body>
