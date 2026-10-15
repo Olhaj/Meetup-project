@@ -193,7 +193,7 @@ button {
 .platform_container {
   display: flex;
   justify-content: space-between;
-  padding: 71px 154px 0 158px;
+  padding: 71px clamp(154px, 11.5vw, 250px) 0;
 }
 
 .platform_content {
@@ -239,6 +239,7 @@ button {
   max-width: 379px;
   height: auto;
 }
+/*=============================================================================*/
 
 /* =========================================
         Экраны от 1024px до 1439px
