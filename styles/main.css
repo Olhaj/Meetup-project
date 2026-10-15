@@ -6,6 +6,8 @@
 }
 
 body {
+  max-width: 1920px;
+  margin: 0 auto;
   background-color: #ffffff;
   color: #212121;
 }
@@ -51,7 +53,8 @@ body {
 
 .search_left,
 .search_left_btn {
-  border-radius: 0 8px 8px 0;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 button {
@@ -182,107 +185,209 @@ button {
   border: 1px solid #00798a;
   background-color: #00798a;
 }
+/*============================================================ */
 
-/* =================================
-        MEDIA FROM 1201PX
-   ================================= */
-@media (min-width: 1201px) {
-  .header {
-    padding-right: 25px;
-  }
-
-  .search_bar {
-    max-width: 500px;
-  }
-
-  .navigation {
-    gap: 20px;
-  }
+/* =========================================
+      PEOPLE PLATFORM
+===========================================*/
+.platform_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 71px 154px 0 158px;
 }
 
-/* =================================
-        MEDIA FROM 1200PX TO 769PX
-   ================================= */
-@media (min-width: 769px) and (max-width: 1200px) {
+.platform_content {
+  max-width: 609px;
+}
+
+.platform_title {
+  padding-bottom: 25px;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 52px;
+}
+
+.platform_description {
+  padding-bottom: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.platform_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 125px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #00798a;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.platform_button:hover {
+  background-color: #0e92a4;
+}
+
+.platform_image {
+  display: block;
+  max-width: 379px;
+  height: auto;
+}
+
+/* =========================================
+        Экраны от 1024px до 1439px
+   ========================================= */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  /* ==========================================
+          HEADER
+=============================================*/
   .header {
     padding: 12px 24px;
   }
 
-  .search_bar {
-    max-width: none;
+  .logo {
+    margin-right: 24px;
   }
 
-  .search_left > input,
-  .search_right > input {
-    padding-left: 37px;
-    font-size: 14px;
+  .search_bar {
+    flex: 1 1 auto;
+    width: 50%;
+    max-width: 480px;
+  }
+
+  .search_left,
+  .search_right {
+    min-width: 0;
+    flex: 1 1 50%;
   }
 
   .navigation {
-    gap: 12px;
-    margin-left: 16px;
+    gap: 14px;
+    margin-right: 0;
   }
 
-  .language_selection,
-  .login_btn,
-  .signup_btn {
-    font-size: 13px;
+  /* ==========================================
+          PLATFORM CONTAINER
+=============================================*/
+  .platform_container {
+    gap: 48px clamp(10px, 3vw, 46px);
+    padding: clamp(40px, 4vw, 58px) clamp(40px, 10.5vw, 150px) 25px;
+  }
+
+  .platform_title {
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: clamp(32px, 3.4vw, 50px);
+    padding-bottom: clamp(12px, 1.5vw, 20px);
+  }
+
+  .platform_description {
+    font-size: 14px;
+    line-height: 22px;
+    padding-bottom: 20px;
+  }
+
+  .platform_button {
+    min-height: 38px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .platform_container > .platform_image-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .platform_image {
+    max-width: clamp(330px, 3vw, 378px);
   }
 }
 
-/* =================================
-        MEDIA FROM 768PX 
-   ================================= */
-@media (max-width: 768px) {
+/* =========================================
+      Экраны от 768px до 1024px
+========================================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .search_bar {
+    max-width: 380px;
+  }
+
+  /* ==========================================
+          PLATFORM CONTAINER
+=============================================*/
+  .platform_container {
+    display: flex;
+    align-items: center;
+    gap: clamp(5px, 1.2vw, 28px);
+    padding: clamp(20px, 3vw, 30px) clamp(10px, 2.5vw, 60px) 25px;
+  }
+
+  .platform_content {
+    flex: 1 1 55%;
+    max-width: 440px;
+  }
+
+  .platform_title {
+    font-size: clamp(22px, 1.2vw, 38px);
+    line-height: clamp(22px, 1.2vw, 38px);
+    padding-bottom: clamp(18px, 1.3vw, 22px);
+  }
+
+  .platform_description {
+    max-width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .platform_image-wrapper {
+    align-self: center;
+  }
+}
+
+/* =========================================
+      Экраны от 425px до 768px
+============================================ */
+@media (min-width: 425px) and (max-width: 768px) {
+  /* ==========================================
+          HEADER
+=============================================*/
   .header {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     row-gap: 10px;
-    padding: 8px 12px;
+    padding: 10px 16px;
   }
 
   .logo {
-    flex: 0 0 auto;
-    margin: 0;
+    margin-right: 0;
   }
 
   .navigation {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    gap: 9px;
     margin-left: auto;
     margin-right: 0;
   }
 
   .search_bar {
     order: 3;
-    display: flex;
-    height: 42px;
-    margin: 16px 31px 30px 20px;
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: none;
   }
 
   .search_left {
     flex: 1 1 auto;
-    width: auto;
     min-width: 0;
-    border-radius: 8px 0 0 8px;
-    border-right: none;
-  }
-
-  .search_left > input {
-    width: 100%;
-    min-width: 0;
-    padding: 9px 12px 9px 37px;
-    font-size: 13px;
   }
 
   .search_right {
     display: flex;
-    flex: 0 0 34px;
-    min-width: 42px;
-    border-left: none;
-    border-radius: 0 8px 8px 0;
+    flex: 0 0 36px;
+    width: 36px;
+    min-width: 36px;
   }
 
   .search_right > input {
@@ -291,35 +396,189 @@ button {
 
   .search_right_btn {
     position: static;
-    display: flex;
-    width: 42px;
+    width: 36px;
     height: 100%;
-    border-radius: 0 8px 8px 0;
-  }
-
-  .search_right_btn img {
-    width: 20px;
-    height: 20px;
+    background-color: #f65858;
   }
 
   .language_selection,
   .login_btn,
   .signup_btn {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .globe_icon {
-    width: 17px;
-    height: 17px;
+    width: 15px;
+    height: 15px;
   }
 
-  .signup_btn:hover,
-  .login_btn:hover {
-    padding: 7px 14px;
+  .signup_btn {
+    padding: 6px 9px;
+  }
+
+  /* ==========================================
+          PLATFORM CONTAINER
+=============================================*/
+  .platform_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 30px 20px 21px;
+  }
+
+  .platform_content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .platform_title {
+    padding-bottom: 20px;
+    font-size: 33px;
+    line-height: 33px;
+  }
+
+  .platform_description {
+    width: 100%;
+    max-width: none;
+    padding-bottom: 20px;
+    font-size: 14px;
+    line-height: 26px;
+  }
+
+  .platform_content > .platform_button {
+    margin-left: 35%;
+  }
+
+  .platform_image-wrapper {
+    align-self: center;
+    width: 100%;
+  }
+
+  .platform_image {
+    margin: 0 auto;
+    max-width: 310px;
   }
 }
-/*============================================================ */
 
 /* =========================================
-      HEADER INFO
-===========================================*/
+      Экраны от 393px до 425px
+   ========================================= */
+@media (min-width: 393px) and (max-width: 425px) {
+  /* ==========================================
+          HEADER
+  =============================================*/
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 9px;
+    padding: 9px 12px;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+
+  .navigation {
+    gap: 7px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .search_bar {
+    order: 3;
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: none;
+  }
+
+  .search_left {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .search_left > input {
+    min-width: 0;
+    width: 100%;
+    padding: 9px 8px 9px 36px;
+    font-size: 12px;
+  }
+
+  .search_right {
+    display: flex;
+    flex: 0 0 34px;
+    width: 34px;
+    min-width: 34px;
+  }
+
+  .search_right > input {
+    display: none;
+  }
+
+  .search_right_btn {
+    position: static;
+    width: 42px;
+    height: 100%;
+    background-color: #f65858;
+  }
+
+  .language_selection,
+  .login_btn,
+  .signup_btn {
+    font-size: 10px;
+  }
+
+  .globe_icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .signup_btn {
+    padding: 6px 8px;
+  }
+
+  /* ==========================================
+          PLATFORM CONTAINER
+=============================================*/
+  .platform_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    min-height: auto;
+    padding: 30px 20px 30px 20px;
+  }
+
+  .platform_content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .platform_title {
+    padding-bottom: 20px;
+    font-size: 25px;
+    line-height: 30.5px;
+  }
+
+  .platform_description {
+    width: 100%;
+    max-width: none;
+    padding-bottom: 18px;
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .platform_content > .platform_button {
+    margin-left: 31%;
+  }
+
+  .platform_image-wrapper {
+    align-self: center;
+    width: 100%;
+  }
+
+  .platform_image {
+    margin: 0 auto;
+    max-width: 215px;
+  }
+}
