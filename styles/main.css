@@ -245,13 +245,14 @@ button {
         EVENTS
 ===========================================*/
 .events_section {
-  margin: 127px clamp(154px, 11.5vw, 250px) 0;
+  padding: 127px clamp(154px, 12.5vw, 250px) 0;
 }
 
 .events_header {
   display: flex;
   align-items: center;
   max-width: 100%;
+  margin-bottom: 24px;
 }
 
 .events_header > h3 {
@@ -265,6 +266,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 8px;
   border-radius: 8px;
   background-color: #97cad11f;
 }
@@ -288,11 +290,91 @@ button {
 
 .events_link {
   margin-left: auto;
+  padding-right: 15px;
   color: #00798a;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   text-decoration: none;
+}
+/*==========================================
+        Карточки событий
+============================================ */
+.events_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 36px;
+  grid-row-gap: 36px;
+}
+
+.events_card {
+  position: relative;
+  max-width: 272px;
+  border-radius: 4px;
+}
+
+.event_card__image {
+  height: 153px;
+  border-radius: 8px;
+}
+
+.events_online {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: 1;
+  display: inline-flex;
+  gap: 4px;
+  padding: 2px 8px 0;
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+}
+
+.events_card__title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 12px 16px 8px 0;
+}
+
+.events_card__category {
+  padding: 21px 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.events_card__meta {
+  display: inline-flex;
+  gap: 6px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.35px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.events_icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.events_card__footer {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.events_card__footer > span {
+  display: inline-flex;
+  gap: 2px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 /* =========================================
