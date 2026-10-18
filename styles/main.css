@@ -377,6 +377,20 @@ button {
   font-size: 16px;
   line-height: 24px;
 }
+
+.events_footer__container {
+  display: flex;
+  justify-content: space-between;
+  width: clamp(1134px, calc(67.3vw + 166px), 1458px);
+  margin: 40px 0 24px;
+}
+
+.events_footer__container > h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+}
+
 .events_mobil {
   display: none;
 }
@@ -460,6 +474,10 @@ button {
   .event_card__title {
     font-size: 16px;
   }
+
+  .events_footer__container {
+    width: clamp(830px, calc(73.41vw + 56px), 1030px);
+  }
 }
 
 /* =========================================
@@ -505,6 +523,10 @@ button {
     padding: 0 clamp(39px, 5vw, 150px) 0;
   }
 
+  .events_card {
+    max-width: 240px;
+  }
+
   .events_grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 5px 15px;
@@ -545,6 +567,15 @@ button {
     align-items: center;
     font-size: 14px;
     line-height: 20px;
+  }
+
+  .events_footer__container {
+    width: clamp(683px, calc(68.41vw + 147px), 840px);
+  }
+
+  .events_footer__container > h2 {
+    font-size: 24px;
+    line-height: 28px;
   }
 }
 
@@ -726,6 +757,19 @@ button {
     font-size: 12px;
     line-height: 16px;
   }
+
+  .events_footer__container {
+    width: clamp(369px, calc(5.41vw + 67px), 580px);
+  }
+
+  .events_footer__container > h2 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .events_footer__link {
+    display: none;
+  }
 }
 
 /* =========================================
@@ -872,8 +916,14 @@ button {
     display: none;
   }
 
-  .events_link__container {
+  .events_link__container,
+  .events_footer__link {
     display: none;
+  }
+
+  .events_footer__container > h2 {
+    font-size: 20px;
+    line-height: 18px;
   }
 
   /* Карточки для мобильного экрана */
