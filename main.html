@@ -44,7 +44,7 @@
             <button class="signup_btn" type="reset">Sign up</button>
         </nav>
     </header>
-    <div class="platform_container">
+    <main class="platform_container">
         <div class="platform_content">
             <h1 class="platform_title">
                 The people platform—Where
@@ -60,19 +60,23 @@
             </a>
         </div>
         <!-- Иллюстрация -->
-        <div class="platform_image-wrapper">
+        <div class="platform_image__wrapper">
             <img class="platform_image" src="assets/images/people_on_bicycles.png"
                 alt="People riding scooters together">
         </div>
-    </div>
+    </main>
     <section class="events_section">
         <div class="events_header">
-            <h2>Events near</h2>
-            <div class="events_btn">
-                <h2>Mountain View, CA</h2>
-                <span><img src="assets/icons/pencil.svg" alt="Pencil"></span>
+            <div class="events_header__container">
+                <h2>Events near</h2>
+                <div class="events_btn">
+                    <h2>Mountain View, CA</h2>
+                    <span><img src="assets/icons/pencil.svg" alt="Pencil"></span>
+                </div>
             </div>
-            <a class="events_link" href="#">See all events</a>
+            <div class="events_link__container">
+                <a class="events_link" href="#">See all events</a>
+            </div>
         </div>
         <!-- Карточки событий -->
         <div class="events_grid">
@@ -97,7 +101,8 @@
                     Palo Alto</h3>
                 <p class="events_card__category">Business (25 km)</p>
                 <span class="events_card__meta"><img class="events_icon" src="assets/icons/calendar.svg"
-                        alt="Calendar">TUE, MAR 19 · 5:00
+                        alt="Calendar">TUE,
+                    MAR 19 · 5:00
                     PM PDT</span>
                 <div class="events_card__footer">
                     <span>
@@ -117,7 +122,8 @@
                 </h3>
                 <p class="events_card__category">Technology</p>
                 <span class="events_card__meta"><img class="events_icon" src="assets/icons/calendar.svg"
-                        alt="Calendar">WED, MAR 13 · 6:00
+                        alt="Calendar">WED,
+                    MAR 13 · 6:00
                     PM PDT</span>
                 <div class="events_card__footer">
                     <span><img class="events_icon" src="assets/icons/added.svg" alt="Quotation mark in a circle">40
@@ -132,7 +138,8 @@
                     Chapter In-Person Event</h3>
                 <p class="events_card__category">Health and Wellbeing (50 km)</p>
                 <span class="events_card__meta"><img class="events_icon" src="assets/icons/calendar.svg"
-                        alt="Calendar">THU, MAR 28 · 5:00
+                        alt="Calendar">THU,
+                    MAR 28 · 5:00
                     PM PDT</span>
                 <div class="events_card__footer">
                     <span><img class="events_icon" src="assets/icons/added.svg" alt="Quotation mark in a circle">41
@@ -148,7 +155,8 @@
                     and Greet!</h3>
                 <p class="events_card__category">Technology (5 km)</p>
                 <span class="events_card__meta"><img class="events_icon" src="assets/icons/calendar.svg"
-                        alt="Calendar">WED, MAR 13 · 6:30
+                        alt="Calendar">WED,
+                    MAR 13 · 6:30
                     PM PDT</span>
                 <div class="events_card__footer">
                     <span><img class="events_icon" src="assets/icons/added.svg" alt="Quotation mark in a circle">29
@@ -165,7 +173,8 @@
                     2024</h3>
                 <p class="events_card__category">Social Activities</p>
                 <span class="events_card__meta"><img class="events_icon" src="assets/icons/calendar.svg"
-                        alt="Calendar">THU, MAR 21 · 6:00
+                        alt="Calendar">THU,
+                    MAR 21 · 6:00
                     PM PDT</span>
                 <div class="events_card__footer">
                     <span><img class="events_icon" src="assets/icons/added.svg" alt="Quotation mark in a circle">51
@@ -179,7 +188,8 @@
                 <h3 class="events_card__title">Free Christian Singles' Dinner</h3>
                 <p class="events_card__category">Hobbies and Passions (10 km)</p>
                 <span class="events_card__meta"><img class="events_icon" src="assets/icons/calendar.svg"
-                        alt="Calendar">FRI, MAR 29 · 6:00
+                        alt="Calendar">FRI,
+                    MAR 29 · 6:00
                     PM PDT</span>
                 <div class="events_card__footer">
                     <span><img class="events_icon" src="assets/icons/added.svg" alt="Quotation mark in a circle">11
@@ -194,12 +204,58 @@
                 <h3 class="events_card__title">In-person: Deep Dive into RAG Architectures (Food served)</h3>
                 <p class="events_card__category">Hobbies and Passions (50 km)</p>
                 <span class="events_card__meta"><img class="events_icon" src="assets/icons/calendar.svg"
-                        alt="Calendar">THU, MAR 14 · 5:00
+                        alt="Calendar">THU,
+                    MAR 14 · 5:00
                     PM PDT</span>
                 <div class="events_card__footer">
                     <span><img class="events_icon" src="assets/icons/added.svg" alt="Quotation mark in a circle">16
                         going</span>
                     <span><img class="events_icon" src="assets/icons/ticket.svg" alt="Ticket">Free</span>
+                </div>
+            </article>
+        </div>
+
+        <!-- Карточки для мобильного экрана -->
+        <div class="events_mobil">
+            <div class="events_card__stripe"></div>
+            <article class="events_card__mobil">
+
+                <div>
+                    <img class="events_mobil__image" src="assets/images/mobil-image-hands.jpg"
+                        alt="Hands are lying on the book">
+                </div>
+                <div class="events_mobil__info">
+                    <h4>Wed, Mar 13 · 11:30 PM UTC</h4>
+                    <h3>All Nations - Manhattan Missions Church Bible Study</h3>
+                    <p>Hobbies and Passions</p>
+                    <img class="events_modil__online" src="assets/images/Online Event.jpg" alt="Camera">
+                </div>
+            </article>
+
+            <div class="events_card__stripe"></div>
+            <article class="events_card__mobil">
+                <div>
+                    <img class="events_mobil__image" src="assets/images/mobile-image-coffee.jpg" alt="Coffee Shop">
+                </div>
+                <div class="events_mobil__info">
+                    <h4>Sat, Mar 23 · 3:00 PM UTC</h4>
+                    <h3>INFJ Personality Type - Coffee Shop Meet & Greet</h3>
+                    <p>Hobbies and Passions</p>
+                    <img class="events_modil__online" src="assets/images/Online Event.jpg" alt="Camera">
+                    <p class="events_mobil__attendees">99 attendees</p>
+                </div>
+            </article>
+
+            <div class="events_card__stripe"></div>
+            <article class="events_card__mobil">
+                <div>
+                    <img class="events_mobil__image" src="assets/images/mobile-image-coffee.jpg" alt="Coffee Shop">
+                </div>
+                <div class="events_mobil__info">
+                    <h4>Sat, Mar 23 · 3:00 PM UTC</h4>
+                    <h3>INFJ Personality Type - Coffee Shop Meet & Greet</h3>
+                    <p>Hobbies and Passions</p>
+                    <p class="events_mobil__attendees">99 attendees</p>
                 </div>
             </article>
         </div>

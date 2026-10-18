@@ -6,10 +6,14 @@
 }
 
 body {
-  max-width: 1920px;
-  margin: 0 auto;
+  /* max-width: 1920px;
+  margin: 0 auto; */
   background-color: #ffffff;
   color: #212121;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* =================================
@@ -191,53 +195,41 @@ button {
       PEOPLE PLATFORM
 ===========================================*/
 .platform_container {
-  display: flex;
-  justify-content: space-between;
-  padding: 71px clamp(154px, 11.5vw, 250px) 0;
-}
-
-.platform_content {
-  max-width: 609px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  max-width: 1920px;
+  margin: clamp(45px, 3vw, 71px) 0 0;
+  padding: 0 clamp(154px, 12vw, 182px) 0;
+  gap: clamp(20px, 3vw, 60px);
 }
 
 .platform_title {
   padding-bottom: 25px;
   font-weight: 700;
-  font-size: 42px;
-  line-height: 52px;
+  font-size: clamp(30px, 2.65vw, 42px);
+  line-height: 1.08;
 }
 
 .platform_description {
-  padding-bottom: 24px;
+  padding-bottom: clamp(24px, 2.65vw, 30px);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 }
 
 .platform_button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 125px;
-  min-height: 40px;
+  display: inline-block;
   padding: 8px 16px;
-  border-radius: 8px;
-  color: #ffffff;
-  background-color: #00798a;
-  font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
-  text-decoration: none;
+  font-weight: 400;
+  background: #007f8b;
+  color: #fff;
+  border-radius: 8px;
 }
 
 .platform_button:hover {
   background-color: #0e92a4;
-}
-
-.platform_image {
-  display: block;
-  max-width: 379px;
-  height: auto;
 }
 /*=============================================================================*/
 
@@ -245,14 +237,21 @@ button {
         EVENTS
 ===========================================*/
 .events_section {
-  padding: 127px clamp(154px, 12.5vw, 250px) 0;
+  margin-top: 127px;
+  padding: 0 clamp(154px, 10vw, 176px) 0;
 }
 
-.events_header {
+.events_section > .events_header {
   display: flex;
-  align-items: center;
-  max-width: 100%;
+  justify-content: space-between;
+  width: clamp(1134px, calc(66.3vw + 166px), 1458px);
   margin-bottom: 24px;
+}
+
+.events_header__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .events_header > h3 {
@@ -288,14 +287,16 @@ button {
   height: 22px;
 }
 
+.events_link__container {
+  display: flex;
+  align-items: center;
+}
+
 .events_link {
-  margin-left: auto;
-  padding-right: 15px;
   color: #00798a;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  text-decoration: none;
 }
 /*==========================================
         Карточки событий
@@ -304,7 +305,7 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 36px;
+  grid-column-gap: clamp(0px, 1vw, 36px);
   grid-row-gap: 36px;
 }
 
@@ -376,11 +377,14 @@ button {
   font-size: 16px;
   line-height: 24px;
 }
+.events_mobil {
+  display: none;
+}
 
 /* =========================================
-        Экраны от 1024px до 1439px
+        Экраны от 1024px до 1440px
    ========================================= */
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 1025px) and (max-width: 1440px) {
   /* ==========================================
           HEADER
 =============================================*/
@@ -413,42 +417,55 @@ button {
           PLATFORM CONTAINER
 =============================================*/
   .platform_container {
-    gap: 48px clamp(10px, 3vw, 46px);
-    padding: clamp(40px, 4vw, 58px) clamp(40px, 10.5vw, 150px) 25px;
+    margin: 50px 0 0;
+    padding: 0 clamp(87px, 10vw, 150px) 0;
   }
 
   .platform_title {
-    font-size: clamp(28px, 3vw, 40px);
-    line-height: clamp(32px, 3.4vw, 50px);
-    padding-bottom: clamp(12px, 1.5vw, 20px);
+    font-size: clamp(28px, 1vw, 40px);
+    padding-bottom: clamp(12px, 0.5vw, 20px);
   }
 
   .platform_description {
     font-size: 14px;
-    line-height: 22px;
-    padding-bottom: 20px;
+    line-height: 20px;
   }
 
   .platform_button {
-    min-height: 38px;
+    min-height: 36px;
     font-size: 14px;
-    line-height: 22px;
-  }
-
-  .platform_container > .platform_image-wrapper {
-    display: flex;
-    align-items: center;
   }
 
   .platform_image {
     max-width: clamp(330px, 3vw, 378px);
   }
+
+  /* ==========================================
+          EVENTS - SECTION
+=============================================*/
+  .events_section {
+    margin-top: 120px;
+    padding: 0 clamp(80px, 10vw, 150px) 0;
+  }
+
+  .events_section > .events_header {
+    width: clamp(830px, calc(70.41vw + 56px), 1049px);
+  }
+
+  .events_grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px 20px;
+  }
+
+  .event_card__title {
+    font-size: 16px;
+  }
 }
 
 /* =========================================
-      Экраны от 768px до 1024px
+      Экраны от 769px до 1023px
 ========================================= */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .search_bar {
     max-width: 380px;
   }
@@ -457,21 +474,13 @@ button {
           PLATFORM CONTAINER
 =============================================*/
   .platform_container {
-    display: flex;
-    align-items: center;
-    gap: clamp(5px, 1.2vw, 28px);
-    padding: clamp(20px, 3vw, 30px) clamp(10px, 2.5vw, 60px) 25px;
-  }
-
-  .platform_content {
-    flex: 1 1 55%;
-    max-width: 440px;
+    margin: 20px 0 0;
+    padding: 0 clamp(45px, 4vw, 150px);
   }
 
   .platform_title {
     font-size: clamp(22px, 1.2vw, 38px);
-    line-height: clamp(22px, 1.2vw, 38px);
-    padding-bottom: clamp(18px, 1.3vw, 22px);
+    padding-bottom: clamp(15px, 1.3vw, 20px);
   }
 
   .platform_description {
@@ -479,13 +488,68 @@ button {
     padding-bottom: 20px;
   }
 
-  .platform_image-wrapper {
+  .platform_image__wrapper {
     align-self: center;
+  }
+
+  .platform_image {
+    width: 300px;
+    height: 250px;
+  }
+
+  /* ==========================================
+          EVENTS - SECTION
+=============================================*/
+  .events_section {
+    margin-top: 80px;
+    padding: 0 clamp(39px, 5vw, 150px) 0;
+  }
+
+  .events_grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px 15px;
+  }
+
+  .events_section > .events_header {
+    width: clamp(683px, calc(68.41vw + 147px), 840px);
+  }
+
+  .event_card__image {
+    max-width: 220px;
+    max-height: 130px;
+  }
+
+  .events_card__title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .events_card__category {
+    padding: 16px 0;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .events_card__meta {
+    align-items: center;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .events_icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .events_card__footer > span {
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
 /* =========================================
-      Экраны от 425px до 768px
+      Экраны от 426px до 768px
 ============================================ */
 @media (min-width: 425px) and (max-width: 768px) {
   /* ==========================================
@@ -559,9 +623,10 @@ button {
   .platform_container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    margin: 30px 0 0;
     gap: 20px;
-    padding: 30px 20px 21px;
+    padding: 0 41px 20px 40px;
   }
 
   .platform_content {
@@ -587,14 +652,79 @@ button {
     margin-left: 35%;
   }
 
-  .platform_image-wrapper {
-    align-self: center;
-    width: 100%;
+  .platform_image__wrapper {
+    margin: 0 auto;
   }
 
   .platform_image {
-    margin: 0 auto;
-    max-width: 310px;
+    max-width: 330px;
+  }
+
+  /* ==========================================
+          EVENTS - SECTION
+=============================================*/
+  .events_section {
+    margin-top: 45px;
+    padding: 0 clamp(20px, 5vw, 45px) 0;
+  }
+
+  .events_section > .events_header {
+    width: clamp(369px, calc(5.41vw + 67px), 580px);
+  }
+
+  .events_header__container > h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .events_btn > h2 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .events_link__container {
+    display: none;
+  }
+
+  .events_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px 5px;
+  }
+
+  .events_card {
+    max-width: 180px;
+  }
+
+  .event_card__image {
+    width: 180px;
+    height: 100px;
+  }
+
+  .events_card__title {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .events_card__category {
+    padding: 14px 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .events_card__meta {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .events_icon {
+    align-items: center;
+    width: 16px;
+    height: 16px;
+  }
+
+  .events_card__footer > span {
+    font-size: 12px;
+    line-height: 16px;
   }
 }
 
@@ -681,9 +811,8 @@ button {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    min-height: auto;
-    padding: 30px 20px 30px 20px;
+    margin: 30px 0 0 0;
+    padding: 0 20px 30px 20px;
   }
 
   .platform_content {
@@ -709,13 +838,104 @@ button {
     margin-left: 31%;
   }
 
-  .platform_image-wrapper {
-    align-self: center;
-    width: 100%;
+  .platform_image__wrapper {
+    margin: 0 auto;
   }
 
   .platform_image {
-    margin: 0 auto;
     max-width: 215px;
+  }
+
+  /* ==========================================
+          EVENTS - SECTION
+=============================================*/
+  .events_section {
+    margin-top: 21px;
+    padding: 0 clamp(8px, 5vw, 15px) 0;
+  }
+
+  .events_section > .events_header {
+    width: clamp(355px, calc(5.41vw + 67px), 550px);
+  }
+
+  .events_header__container > h2 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .events_btn > h2 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .events_grid {
+    display: none;
+  }
+
+  .events_link__container {
+    display: none;
+  }
+
+  /* Карточки для мобильного экрана */
+  .events_mobil {
+    display: block;
+  }
+
+  .events_card__stripe {
+    margin-bottom: 10px;
+    width: 95%;
+    border: 1px solid #d9d9d9;
+  }
+
+  .events_card__mobil {
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 0 21px;
+    gap: 8px;
+  }
+
+  .events_mobil__image {
+    max-width: 97px;
+    height: 55px;
+  }
+
+  .events_mobil__info {
+    margin-right: 20px;
+  }
+
+  .events_mobil__info > h4 {
+    color: #7c6f50;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 12px;
+  }
+
+  .events_mobil__info > h3 {
+    padding-top: 2px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  .events_mobil__info > p {
+    color: #707070;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 12px;
+  }
+
+  .events_mobil__info {
+    position: relative;
+  }
+
+  .events_modil__online {
+    margin-top: 3px;
+  }
+
+  .events_mobil__attendees {
+    margin: 17px 0 21px;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
   }
 }
