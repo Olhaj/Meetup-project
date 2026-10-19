@@ -1,3 +1,9 @@
+:root {
+  --main-text-color: #212121;
+  --main-background-color: #ffffff;
+  --footer-background-color: #212121;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,26 +11,32 @@
   font-family: Roboto;
 }
 
+html {
+  background-color: #f5f5f5;
+}
+
 body {
-  /* max-width: 1920px;
-  margin: 0 auto; */
-  background-color: #ffffff;
-  color: #212121;
+  width: 100%;
+  max-width: 1512px;
+  min-width: 393px;
+  margin: 0 auto;
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
 }
 
 a {
   text-decoration: none;
 }
 
-/* =================================
-      HEADER START
-   ================================= */
+/*===================================
+        HEADER
+=====================================*/
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 15px clamp(16px, 3vw, 50px);
+  padding: 11px 50px 0 24px;
 }
 
 .logo {
@@ -191,31 +203,54 @@ button {
 }
 /*============================================================ */
 
-/* =========================================
-      PEOPLE PLATFORM
+/*=========================================
+        PLATFORM   
 ===========================================*/
 .platform_container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: stretch;
-  max-width: 1920px;
-  margin: clamp(45px, 3vw, 71px) 0 0;
-  padding: 0 clamp(154px, 12vw, 182px) 0;
-  gap: clamp(20px, 3vw, 60px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 379px);
+  align-items: center;
+  padding-top: clamp(69px, 4.56vw, 69px);
+  padding-right: clamp(280px, 21.16vw, 320px);
+  padding-bottom: clamp(123px, 8.14vw, 123px);
+  padding-left: clamp(158px, 10.45vw, 158px);
+  gap: 46px;
+}
+
+.platform_content {
+  min-width: 0;
 }
 
 .platform_title {
+  margin: 0;
   padding-bottom: 25px;
   font-weight: 700;
-  font-size: clamp(30px, 2.65vw, 42px);
-  line-height: 1.08;
+  font-size: 42px;
+  line-height: 52px;
 }
 
 .platform_description {
-  padding-bottom: clamp(24px, 2.65vw, 30px);
+  max-width: 609px;
+  margin: 0;
+  padding-bottom: 24px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+}
+
+.platform_image__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.platform_image {
+  display: block;
+  width: 379px;
+  height: 269px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .platform_button {
@@ -232,30 +267,30 @@ button {
   background-color: #0e92a4;
 }
 /*=============================================================================*/
-
-/* =========================================
-        EVENTS
-===========================================*/
-.events_section {
-  margin-top: 127px;
-  padding: 0 clamp(154px, 10vw, 176px) 0;
+.main {
+  padding-right: clamp(180px, 9.16vw, 185px);
+  padding-bottom: clamp(123px, 8.14vw, 123px);
+  padding-left: clamp(158px, 10.45vw, 158px);
 }
 
-.events_section > .events_header {
+/*=========================================
+        EVENTS - SECTION
+===========================================*/
+.events_header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: clamp(1134px, calc(66.3vw + 166px), 1458px);
+  width: 100%;
   margin-bottom: 24px;
 }
 
 .events_header__container {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.events_header > h3 {
-  padding: 4px 8px 0;
+.events_header__container > h2 {
+  margin: 0;
   font-weight: 600;
   font-size: 28px;
   line-height: 36px;
@@ -263,14 +298,15 @@ button {
 
 .events_btn {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-left: 8px;
   border-radius: 8px;
   background-color: #97cad11f;
 }
 
 .events_btn > h2 {
+  margin: 0;
   padding: 12px 8px 9px 12px;
   font-weight: 600;
   font-size: 20px;
@@ -278,11 +314,12 @@ button {
 }
 
 .events_btn > span {
-  align-self: center;
-  padding: 16px 12px 11px 0;
+  display: flex;
+  align-items: center;
+  padding: 0 12px 0 0;
 }
 
-.events_btn > img {
+.events_btn > span img {
   width: 22px;
   height: 22px;
 }
@@ -290,6 +327,7 @@ button {
 .events_link__container {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
 .events_link {
@@ -297,51 +335,54 @@ button {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  text-decoration: none;
 }
-/*==========================================
-        Карточки событий
-============================================ */
+
+/* ======================
+   Сетка карточек
+   ======================*/
+
 .events_grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: clamp(0px, 1vw, 36px);
-  grid-row-gap: 36px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 36px;
+  row-gap: 36px;
+  width: 100%;
 }
+
+/* ======================
+   Карточка события
+   ======================*/
 
 .events_card {
   position: relative;
-  max-width: 272px;
+  width: 100%;
+  min-width: 0;
+  padding-bottom: 30px;
   border-radius: 4px;
 }
 
 .event_card__image {
+  display: block;
+  width: 272px;
   height: 153px;
+  max-width: 100%;
   border-radius: 8px;
-}
-
-.events_online {
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  z-index: 1;
-  display: inline-flex;
-  gap: 4px;
-  padding: 2px 8px 0;
-  border-radius: 4px;
-  border: 1px solid #ffffff;
-  background-color: #ffffff;
+  object-fit: cover;
 }
 
 .events_card__title {
+  margin: 12px 0 0;
+  padding: 0 16px 0 0;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  padding: 12px 16px 8px 0;
 }
 
 .events_card__category {
-  padding: 21px 0;
+  margin: 16px 0 0;
+  padding: 0;
+  color: #707070;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -349,58 +390,177 @@ button {
 
 .events_card__meta {
   display: inline-flex;
+  align-items: center;
   gap: 6px;
+  margin-top: 11px;
+  margin-bottom: 12px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: -0.35px;
-  text-align: center;
-  margin-bottom: 12px;
 }
 
-.events_icon {
-  display: block;
+.events_card__meta .events_icon {
+  flex: 0 0 20px;
   width: 20px;
   height: 20px;
 }
 
 .events_card__footer {
   display: flex;
+  align-items: center;
   gap: 16px;
-  margin-bottom: 32px;
+  margin: 0;
 }
 
 .events_card__footer > span {
   display: inline-flex;
+  align-items: center;
   gap: 2px;
+  color: #212121;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 }
 
+.events_card__footer > span .events_icon {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* =======================
+   Online Event
+   =======================*/
+.events_online {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px 0;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  background-color: #ffffff;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.events_online__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.events_footer {
+  margin: 0;
+}
+
 .events_footer__container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: clamp(1134px, calc(67.3vw + 166px), 1458px);
+  width: 100%;
   margin: 40px 0 24px;
 }
 
 .events_footer__container > h2 {
+  margin: 0;
   font-weight: 600;
   font-size: 28px;
   line-height: 36px;
 }
 
+.events_footer__link {
+  display: flex;
+  align-items: center;
+}
+
+/* На десктопе мобильный список скрыт */
 .events_mobil {
   display: none;
 }
+/*===========================================================*/
+/*=======================================
+        JOIN MEETUP - SECTION
+=========================================*/
+.join_container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 75px;
+  padding: 20px 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #97cad114;
+}
 
-/* =========================================
+.join_content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.join_title {
+  margin: 0 0 16px;
+  color: #212121;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.join_description {
+  margin: 0 0 16px;
+  color: #212121;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.join_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 192px;
+  height: 40px;
+  margin: 0 0 16px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #e32359;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.join_btn:hover {
+  background-color: #d84a72;
+}
+
+.join_image__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.join_image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*===========================================
         Экраны от 1024px до 1440px
-   ========================================= */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  /* ==========================================
-          HEADER
+=============================================*/
+@media (min-width: 1024px) and (max-width: 1440px) {
+  /*===========================================
+            HEADER
 =============================================*/
   .header {
     padding: 12px 24px;
@@ -427,170 +587,374 @@ button {
     margin-right: 0;
   }
 
-  /* ==========================================
-          PLATFORM CONTAINER
-=============================================*/
+  /*=========================================
+        PLATFORM     
+===========================================*/
   .platform_container {
-    margin: 50px 0 0;
-    padding: 0 clamp(87px, 10vw, 150px) 0;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+    padding-top: clamp(50px, 4.6vw, 69px);
+    padding-right: clamp(140px, 14vw, 280px);
+    padding-bottom: clamp(75px, 8.1vw, 123px);
+    padding-left: clamp(75px, 10.45vw, 158px);
+    gap: clamp(32px, 3.05vw, 46px);
   }
 
   .platform_title {
-    font-size: clamp(28px, 1vw, 40px);
-    padding-bottom: clamp(12px, 0.5vw, 20px);
+    padding-bottom: clamp(18px, 1.65vw, 25px);
+    font-size: clamp(28px, 2.78vw, 42px);
+    line-height: clamp(34px, 3.44vw, 52px);
   }
 
   .platform_description {
-    font-size: 14px;
-    line-height: 20px;
+    padding-bottom: clamp(20px, 1.59vw, 24px);
+    font-size: clamp(14px, 1.06vw, 16px);
+    line-height: 24px;
   }
 
-  .platform_button {
-    min-height: 36px;
-    font-size: 14px;
+  .platform_image__wrapper {
+    width: 100%;
   }
 
   .platform_image {
-    max-width: clamp(330px, 3vw, 378px);
+    width: clamp(280px, 25vw, 379px);
+    height: auto;
+    aspect-ratio: 379 / 269;
   }
 
-  /* ==========================================
-          EVENTS - SECTION
+  .main {
+    padding-right: clamp(110px, 5vw, 180px);
+    padding-bottom: clamp(75px, 8.1vw, 123px);
+    padding-left: clamp(75px, 10.45vw, 158px);
+  }
+
+  /*=========================================
+        EVENTS - SECTION
 =============================================*/
-  .events_section {
-    margin-top: 120px;
-    padding: 0 clamp(80px, 10vw, 150px) 0;
+  .events_header {
+    margin-bottom: clamp(20px, 1.67vw, 24px);
   }
 
-  .events_section > .events_header {
-    width: clamp(830px, calc(70.41vw + 56px), 1049px);
+  .events_header__container > h2 {
+    font-size: clamp(22px, 1.95vw, 28px);
+    line-height: clamp(28px, 2.5vw, 36px);
+  }
+
+  .events_btn {
+    margin-left: clamp(6px, 0.56vw, 8px);
+  }
+
+  .events_btn > span img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .events_btn > h2 {
+    padding: 9px 7px 7px 10px;
+    font-size: clamp(16px, 1.39vw, 20px);
+    line-height: clamp(20px, 1.67vw, 24px);
   }
 
   .events_grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: clamp(16px, 2.5vw, 36px);
+    row-gap: clamp(28px, 2.5vw, 36px);
   }
 
-  .event_card__title {
-    font-size: 16px;
+  .events_card {
+    padding-bottom: clamp(24px, 2.08vw, 30px);
+  }
+
+  .event_card__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 272 / 153;
+  }
+
+  .events_card__title {
+    margin-top: clamp(9px, 0.83vw, 12px);
+    font-size: clamp(16px, 1.39vw, 20px);
+    line-height: clamp(19px, 1.67vw, 24px);
+  }
+
+  .events_card__category {
+    margin-top: clamp(12px, 1.11vw, 16px);
+    font-size: clamp(12px, 0.97vw, 14px);
+    line-height: clamp(17px, 1.39vw, 20px);
+  }
+
+  .events_card__meta {
+    gap: 6px;
+    margin-top: clamp(8px, 0.76vw, 11px);
+    margin-bottom: 12px;
+    font-size: clamp(12px, 0.97vw, 14px);
+    line-height: clamp(17px, 1.39vw, 20px);
+  }
+
+  .events_card__meta .events_icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .events_card__footer {
+    gap: clamp(10px, 1.11vw, 16px);
+  }
+
+  .events_card__footer > span {
+    font-size: clamp(13px, 1.11vw, 16px);
+    line-height: clamp(19px, 1.67vw, 24px);
   }
 
   .events_footer__container {
-    width: clamp(830px, calc(73.41vw + 56px), 1030px);
+    margin-top: clamp(32px, 2.78vw, 40px);
+    margin-bottom: clamp(18px, 1.67vw, 24px);
+  }
+
+  .events_footer__container > h2 {
+    font-size: clamp(22px, 1.95vw, 28px);
+    line-height: clamp(28px, 2.5vw, 36px);
+  }
+
+  /*=======================================
+        JOIN MEETUP - SECTION
+=========================================*/
+  .join_container {
+    gap: clamp(40px, 5.21vw, 75px);
+
+    padding-top: clamp(16px, 1.39vw, 20px);
+    padding-right: clamp(32px, 3.89vw, 56px);
+    padding-bottom: clamp(16px, 1.39vw, 20px);
+    padding-left: clamp(16px, 1.39vw, 20px);
+  }
+
+  .join_content {
+    padding-top: clamp(12px, 1.11vw, 16px);
+    padding-bottom: clamp(12px, 1.11vw, 16px);
+  }
+
+  .join_title {
+    margin-bottom: clamp(12px, 1.11vw, 16px);
+    font-size: clamp(24px, 1.95vw, 28px);
+    line-height: clamp(30px, 2.5vw, 36px);
+  }
+
+  .join_description {
+    margin-bottom: clamp(12px, 1.11vw, 16px);
+    font-size: clamp(14px, 1.11vw, 16px);
+    line-height: 24px;
+  }
+
+  .join_btn {
+    width: 192px;
+    height: 40px;
+    margin-bottom: clamp(12px, 1.11vw, 16px);
+  }
+
+  .join_image__wrapper {
+    justify-content: flex-end;
   }
 }
 
-/* =========================================
-      Экраны от 769px до 1023px
-========================================= */
-@media (min-width: 769px) and (max-width: 1024px) {
+/*==========================================
+        Экраны от 768px до 1024px
+============================================*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  /*==========================================
+        HEADER
+============================================*/
+  .header {
+    padding-top: clamp(5.7px, calc(0.4584vw + 2.198px), 6.9px);
+    padding-right: clamp(17.6px, calc(2.816vw - 4.067px), 24.8px);
+    padding-bottom: clamp(22.1px, calc(-1.2443vw + 34.89px), 25.3px);
+    padding-left: 24px;
+  }
+
   .search_bar {
     max-width: 380px;
   }
 
-  /* ==========================================
-          PLATFORM CONTAINER
-=============================================*/
+  /*=========================================
+        PLATFORM     
+===========================================*/
   .platform_container {
-    margin: 20px 0 0;
-    padding: 0 clamp(45px, 4vw, 150px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+    padding-top: clamp(40px, 4.55vw, 49px);
+    padding-right: clamp(50px, 4.7vw, 140px);
+    padding-bottom: clamp(55px, 7.35vw, 74px);
+    padding-left: clamp(45px, 8.2vw, 74px);
+    gap: clamp(24px, 3.1vw, 32px);
   }
 
   .platform_title {
-    font-size: clamp(22px, 1.2vw, 38px);
-    padding-bottom: clamp(15px, 1.3vw, 20px);
+    padding-bottom: clamp(16px, 1.65vw, 18px);
+    font-size: clamp(25px, 2.78vw, 28px);
+    line-height: clamp(31px, 3.44vw, 34px);
   }
 
   .platform_description {
-    max-width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: clamp(18px, 1.95vw, 20px);
+    font-size: clamp(13px, 1.37vw, 14px);
+    line-height: 22px;
   }
 
   .platform_image__wrapper {
-    align-self: center;
+    width: 100%;
   }
 
   .platform_image {
-    width: 300px;
-    height: 250px;
+    width: clamp(230px, 29.3vw, 300px);
+    height: auto;
+    aspect-ratio: 379 / 269;
   }
 
-  /* ==========================================
-          EVENTS - SECTION
-=============================================*/
-  .events_section {
-    margin-top: 80px;
-    padding: 0 clamp(39px, 5vw, 150px) 0;
+  .main {
+    padding-right: clamp(50px, 4.7vw, 140px);
+    padding-bottom: clamp(55px, 7.35vw, 74px);
+    padding-left: clamp(45px, 8.2vw, 74px);
   }
 
-  .events_card {
-    max-width: 240px;
+  /*=========================================
+        EVENTS - SECTION
+===========================================*/
+  .events_header {
+    margin-bottom: 20px;
+  }
+
+  .events_header__container > h2 {
+    font-size: clamp(20px, 2.15vw, 22px);
+    line-height: clamp(26px, 2.73vw, 28px);
+  }
+
+  .events_btn > h2 {
+    padding: 8px 6px 6px 9px;
+    font-size: clamp(14px, 1.56vw, 16px);
+    line-height: 20px;
+  }
+
+  .events_btn > span img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .events_link {
+    font-size: 14px;
+    line-height: 20px;
   }
 
   .events_grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 5px 15px;
+    column-gap: clamp(16px, 2.34vw, 24px);
+    row-gap: 32px;
   }
 
-  .events_section > .events_header {
-    width: clamp(683px, calc(68.41vw + 147px), 840px);
+  .events_card {
+    padding-bottom: 24px;
   }
 
   .event_card__image {
-    max-width: 220px;
-    max-height: 130px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 272 / 153;
   }
 
   .events_card__title {
-    font-size: 18px;
-    line-height: 20px;
+    margin-top: 10px;
+    font-size: clamp(15px, 1.76vw, 18px);
+    line-height: clamp(18px, 1.95vw, 20px);
   }
 
   .events_card__category {
-    padding: 16px 0;
+    margin-top: 13px;
     font-size: 12px;
     line-height: 18px;
   }
 
   .events_card__meta {
-    align-items: center;
+    margin-top: 9px;
+    margin-bottom: 10px;
     font-size: 12px;
     line-height: 16px;
   }
 
-  .events_icon {
+  .events_card__meta .events_icon,
+  .events_card__footer > span .events_icon {
     width: 18px;
     height: 18px;
   }
 
+  .events_card__footer {
+    gap: 12px;
+  }
+
   .events_card__footer > span {
-    align-items: center;
     font-size: 14px;
     line-height: 20px;
   }
 
   .events_footer__container {
-    width: clamp(683px, calc(68.41vw + 147px), 840px);
+    margin-top: 36px;
+    margin-bottom: 20px;
   }
 
   .events_footer__container > h2 {
     font-size: 24px;
-    line-height: 28px;
+    line-height: 30px;
+  }
+
+  /*=======================================
+        JOIN MEETUP - SECTION
+=========================================*/
+  .join_container {
+    gap: clamp(28px, 5.21vw, 40px);
+
+    padding-top: clamp(14px, 1.39vw, 16px);
+    padding-right: clamp(24px, 3.89vw, 32px);
+    padding-bottom: clamp(14px, 1.39vw, 16px);
+    padding-left: clamp(16px, 1.39vw, 20px);
+  }
+
+  .join_content {
+    padding-top: clamp(10px, 1.11vw, 12px);
+    padding-bottom: clamp(10px, 1.11vw, 12px);
+  }
+
+  .join_title {
+    margin-bottom: clamp(10px, 1.11vw, 12px);
+    font-size: clamp(22px, 2.34vw, 24px);
+    line-height: clamp(28px, 2.93vw, 30px);
+  }
+
+  .join_description {
+    margin-bottom: clamp(10px, 1.11vw, 12px);
+    font-size: clamp(13px, 1.37vw, 14px);
+    line-height: 22px;
+  }
+
+  .join_btn {
+    width: 192px;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+
+  .join_image__wrapper {
+    justify-content: center;
   }
 }
 
-/* =========================================
-      Экраны от 426px до 768px
-============================================ */
+/*==========================================
+        Экраны от 425px до 768px
+============================================*/
 @media (min-width: 425px) and (max-width: 768px) {
-  /* ==========================================
-          HEADER
-=============================================*/
+  /*==========================================
+        HEADER
+============================================*/
   .header {
     display: flex;
     flex-wrap: wrap;
     row-gap: 10px;
-    padding: 10px 16px;
+    padding-top: clamp(4.1px, calc(0.4584vw + 2.198px), 5.7px);
+    padding-right: clamp(7.9px, calc(2.816vw - 4.067px), 17.6px);
+    padding-bottom: clamp(25.3px, calc(-1.2443vw + 34.89px), 29.6px);
+    padding-left: 24px;
   }
 
   .logo {
@@ -648,16 +1012,18 @@ button {
     padding: 6px 9px;
   }
 
-  /* ==========================================
-          PLATFORM CONTAINER
-=============================================*/
+  /*=========================================
+        PLATFORM     
+===========================================*/
   .platform_container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px 0 0;
-    gap: 20px;
-    padding: 0 41px 20px 40px;
+    gap: 10px;
+    padding-top: clamp(24px, 4.6vw, 39px);
+    padding-right: clamp(24px, 5vw, 49px);
+    padding-bottom: clamp(21px, 4.5vw, 54px);
+    padding-left: clamp(24px, 5vw, 44px);
   }
 
   .platform_content {
@@ -666,124 +1032,234 @@ button {
   }
 
   .platform_title {
-    padding-bottom: 20px;
-    font-size: 33px;
-    line-height: 33px;
+    padding-bottom: clamp(16px, 2.6vw, 20px);
+    font-size: clamp(25px, 4.3vw, 33px);
+    line-height: clamp(31px, 4.3vw, 33px);
   }
 
   .platform_description {
     width: 100%;
     max-width: none;
     padding-bottom: 20px;
-    font-size: 14px;
-    line-height: 26px;
-  }
-
-  .platform_content > .platform_button {
-    margin-left: 35%;
-  }
-
-  .platform_image__wrapper {
-    margin: 0 auto;
-  }
-
-  .platform_image {
-    max-width: 330px;
-  }
-
-  /* ==========================================
-          EVENTS - SECTION
-=============================================*/
-  .events_section {
-    margin-top: 45px;
-    padding: 0 clamp(20px, 5vw, 45px) 0;
-  }
-
-  .events_section > .events_header {
-    width: clamp(369px, calc(5.41vw + 67px), 580px);
-  }
-
-  .events_header__container > h2 {
-    font-size: 18px;
+    font-size: clamp(12px, 1.83vw, 14px);
     line-height: 24px;
   }
 
+  .platform_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 126px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .platform_image__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+  }
+
+  .platform_image {
+    width: clamp(215px, 45vw, 330px);
+    height: auto;
+    aspect-ratio: 379 / 269;
+  }
+
+  .main {
+    padding-right: clamp(24px, 5vw, 49px);
+    padding-bottom: clamp(21px, 4.5vw, 54px);
+    padding-left: clamp(24px, 5vw, 44px);
+  }
+
+  /*=========================================
+        EVENTS - SECTION
+===========================================*/
+  .events_header {
+    margin-bottom: 16px;
+  }
+
+  .events_header__container > h2 {
+    font-size: clamp(18px, 2.8vw, 22px);
+    line-height: clamp(24px, 3.5vw, 28px);
+  }
+
+  .events_btn {
+    margin-left: 5px;
+  }
+
+  .events_btn > span img {
+    width: 15px;
+    height: 15px;
+  }
+
   .events_btn > h2 {
-    font-size: 16px;
+    padding: 7px 5px 6px 8px;
+    font-size: clamp(13px, 2vw, 16px);
     line-height: 18px;
   }
 
-  .events_link__container {
+  .events_link__container,
+  .events_footer__link {
     display: none;
   }
 
   .events_grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 5px 5px;
+    column-gap: 16px;
+    row-gap: 28px;
   }
 
   .events_card {
-    max-width: 180px;
+    padding-bottom: 20px;
   }
 
   .event_card__image {
-    width: 180px;
-    height: 100px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 272 / 153;
   }
 
   .events_card__title {
-    font-size: 16px;
-    line-height: 18px;
+    margin-top: 9px;
+    padding-right: 4px;
+    font-size: clamp(13px, 2.2vw, 16px);
+    line-height: clamp(16px, 2.5vw, 19px);
   }
 
   .events_card__category {
-    padding: 14px 0;
-    font-size: 14px;
-    line-height: 18px;
-  }
-
-  .events_card__meta {
-    font-size: 12px;
+    margin-top: 12px;
+    font-size: 11px;
     line-height: 16px;
   }
 
-  .events_icon {
-    align-items: center;
+  .events_card__meta {
+    gap: 4px;
+    margin-top: 8px;
+    margin-bottom: 9px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .events_card__meta .events_icon,
+  .events_card__footer > span .events_icon {
     width: 16px;
     height: 16px;
   }
 
+  .events_card__footer {
+    gap: 8px;
+  }
+
   .events_card__footer > span {
-    font-size: 12px;
+    gap: 2px;
+    font-size: 11px;
     line-height: 16px;
   }
 
+  .events_online {
+    top: 4px;
+    left: 6px;
+    font-size: 9px;
+    line-height: 12px;
+  }
+
+  .events_online__icon {
+    width: 12px;
+    height: 12px;
+  }
+
   .events_footer__container {
-    width: clamp(369px, calc(5.41vw + 67px), 580px);
+    margin-top: 32px;
+    margin-bottom: 16px;
   }
 
   .events_footer__container > h2 {
-    font-size: 22px;
+    font-size: clamp(18px, 2.8vw, 22px);
     line-height: 26px;
   }
 
-  .events_footer__link {
+  .events_mobil {
     display: none;
+  }
+
+  /*=======================================
+        JOIN MEETUP - SECTION
+=========================================*/
+  .join_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 16px 5px;
+  }
+
+  .join_content {
+    display: contents;
+  }
+
+  .join_title {
+    grid-column: 1;
+    order: 1;
+    margin: 0;
+    font-weight: 600;
+    font-size: clamp(20px, 2.8vw, 24px);
+    line-height: 36px;
+  }
+
+  .join_image__wrapper {
+    grid-column: 1;
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .join_image {
+    display: block;
+    width: clamp(238px, 45vw, 280px);
+    height: auto;
+    aspect-ratio: 238 / 137;
+    object-fit: contain;
+  }
+
+  .join_description {
+    grid-column: 1;
+    order: 3;
+    margin: 7px 0 0;
+    font-weight: 400;
+    font-size: clamp(12px, 1.8vw, 14px);
+    line-height: 24px;
+  }
+
+  .join_btn {
+    grid-column: 1;
+    order: 4;
+    width: 192px;
+    height: 40px;
+    margin: 22px auto 0;
   }
 }
 
-/* =========================================
-      Экраны от 393px до 425px
-   ========================================= */
+/*==========================================
+        Экраны от 393px до 425px
+============================================*/
 @media (min-width: 393px) and (max-width: 425px) {
-  /* ==========================================
-          HEADER
-  =============================================*/
+  /*==========================================
+        HEADER
+============================================*/
   .header {
     display: flex;
     flex-wrap: wrap;
     row-gap: 9px;
-    padding: 9px 12px;
+    padding-top: clamp(4px, calc(0.4584vw + 2.198px), 4.1px);
+    padding-right: clamp(7px, calc(2.816vw - 4.067px), 7.9px);
+    padding-bottom: clamp(29.6px, calc(-1.2443vw + 34.89px), 30px);
+    padding-left: 24px;
   }
 
   .logo {
@@ -848,15 +1324,18 @@ button {
     padding: 6px 8px;
   }
 
-  /* ==========================================
-          PLATFORM CONTAINER
-=============================================*/
+  /*=========================================
+        PLATFORM     
+===========================================*/
   .platform_container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 30px 0 0 0;
-    padding: 0 20px 30px 20px;
+    gap: 10px;
+    padding-top: 0;
+    padding-right: 20px;
+    padding-bottom: 21px;
+    padding-left: 21px;
   }
 
   .platform_content {
@@ -865,41 +1344,63 @@ button {
   }
 
   .platform_title {
+    margin: 0;
     padding-bottom: 20px;
+
     font-size: 25px;
-    line-height: 30.5px;
+    line-height: 31px;
   }
 
   .platform_description {
     width: 100%;
     max-width: none;
     padding-bottom: 18px;
+
     font-size: 12px;
     line-height: 24px;
   }
 
-  .platform_content > .platform_button {
-    margin-left: 31%;
+  .platform_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 126px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
   }
 
   .platform_image__wrapper {
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin: 0;
   }
 
   .platform_image {
-    max-width: 215px;
+    width: 215px;
+    height: 153px;
+    max-width: 100%;
+    object-fit: contain;
   }
 
-  /* ==========================================
-          EVENTS - SECTION
-=============================================*/
-  .events_section {
-    margin-top: 21px;
-    padding: 0 clamp(8px, 5vw, 15px) 0;
+  .main {
+    padding-top: 0;
+    padding-right: 15px;
+    padding-left: 14px;
   }
 
-  .events_section > .events_header {
-    width: clamp(355px, calc(5.41vw + 67px), 550px);
+  /*=========================================
+        EVENTS - SECTION
+===========================================*/
+  .events_header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 16px;
   }
 
   .events_header__container > h2 {
@@ -907,53 +1408,71 @@ button {
     line-height: 25px;
   }
 
+  .events_btn {
+    margin-left: 5px;
+  }
+
   .events_btn > h2 {
+    padding: 6px 5px 5px 8px;
     font-size: 14px;
     line-height: 16px;
   }
 
-  .events_grid {
-    display: none;
+  .events_btn > span {
+    padding-right: 8px;
   }
 
+  .events_btn > span img {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Ссылка See all events полностью убирается */
   .events_link__container,
   .events_footer__link {
     display: none;
   }
 
-  .events_footer__container > h2 {
-    font-size: 20px;
-    line-height: 18px;
+  /* Большая сетка карточек скрывается */
+  .events_grid {
+    display: none;
   }
 
-  /* Карточки для мобильного экрана */
   .events_mobil {
     display: block;
   }
 
+  /* Разделительная полоска между мобильными карточками */
   .events_card__stripe {
-    margin-bottom: 10px;
-    width: 95%;
+    width: 100%;
+    margin: 0 0 10px;
     border: 1px solid #d9d9d9;
   }
 
   .events_card__mobil {
     display: flex;
+    align-items: flex-start;
     justify-content: flex-start;
-    margin: 10px 0 21px;
     gap: 8px;
+
+    width: 100%;
+    margin: 10px 0 21px;
   }
 
   .events_mobil__image {
-    max-width: 97px;
+    flex: 0 0 97px;
+    width: 97px;
     height: 55px;
+    object-fit: cover;
   }
 
   .events_mobil__info {
-    margin-right: 20px;
+    min-width: 0;
+    margin: 0;
   }
 
   .events_mobil__info > h4 {
+    margin: 0;
     color: #7c6f50;
     font-weight: 500;
     font-size: 9px;
@@ -961,24 +1480,25 @@ button {
   }
 
   .events_mobil__info > h3 {
-    padding-top: 2px;
+    margin: 2px 0 0;
     font-weight: 500;
     font-size: 10px;
     line-height: 15px;
   }
 
   .events_mobil__info > p {
+    margin: 0;
     color: #707070;
     font-weight: 400;
     font-size: 9px;
     line-height: 12px;
   }
 
-  .events_mobil__info {
-    position: relative;
-  }
-
   .events_modil__online {
+    display: block;
+    width: auto;
+    max-width: 70px;
+    height: auto;
     margin-top: 3px;
   }
 
@@ -987,5 +1507,86 @@ button {
     font-weight: 400;
     font-size: 8px;
     line-height: 12px;
+  }
+
+  .events_footer {
+    margin: 0;
+  }
+
+  .events_footer__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 32px 0 16px;
+  }
+
+  .events_footer__container > h2 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  /*=======================================
+        JOIN MEETUP - SECTION
+=========================================*/
+  .join_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 0;
+  }
+
+  .join_content {
+    display: contents;
+    width: 100%;
+  }
+
+  .join_title {
+    grid-column: 1;
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 16px 0 0;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .join_image__wrapper {
+    grid-column: 1;
+    order: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .join_image {
+    width: 238px;
+    height: 137px;
+    object-fit: contain;
+  }
+
+  .join_description {
+    grid-column: 1;
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    margin: 7px 0 0;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .join_btn {
+    grid-column: 1;
+    order: 4;
+    width: 192px;
+    height: 40px;
+    margin: 22px auto 0;
   }
 }
