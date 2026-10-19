@@ -1,7 +1,9 @@
 :root {
-  --main-text-color: #212121;
+  --main-color: #212121;
   --main-background-color: #ffffff;
-  --footer-background-color: #212121;
+  --box-background-color: #97cad114;
+  --btn-blue: #00798a;
+  --btn-pink: #f65858;
 }
 
 * {
@@ -21,7 +23,7 @@ body {
   min-width: 393px;
   margin: 0 auto;
   background-color: var(--main-background-color);
-  color: var(--main-text-color);
+  color: var(--main-color);
 }
 
 a {
@@ -145,7 +147,7 @@ button {
 
 .search_left_btn:hover,
 .search_right_btn:hover {
-  background-color: #f65858;
+  background-color: var(--btn-pink);
 }
 
 .navigation {
@@ -196,10 +198,9 @@ button {
   width: 83px;
   height: 36px;
   padding: 8px 16px;
-  color: #ffffff;
+  color: var(--main-background-color);
   border-radius: 8px;
-  border: 1px solid #00798a;
-  background-color: #00798a;
+  background-color: var(--btn-blue);
 }
 /*============================================================ */
 
@@ -258,8 +259,8 @@ button {
   padding: 8px 16px;
   font-size: 16px;
   font-weight: 400;
-  background: #007f8b;
-  color: #fff;
+  background: var(--btn-blue);
+  color: var(--main-background-color);
   border-radius: 8px;
 }
 
@@ -331,7 +332,7 @@ button {
 }
 
 .events_link {
-  color: #00798a;
+  color: var(--btn-blue);
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -417,7 +418,6 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  color: #212121;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -441,9 +441,9 @@ button {
   align-items: center;
   gap: 4px;
   padding: 2px 8px 0;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--main-background-color);
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: var(--main-background-color);
   font-size: 12px;
   line-height: 16px;
 }
@@ -493,7 +493,7 @@ button {
   padding: 20px 56px;
   border-radius: 8px;
   overflow: hidden;
-  background-color: #97cad114;
+  background-color: var(--box-background-color);
 }
 
 .join_content {
@@ -506,7 +506,6 @@ button {
 
 .join_title {
   margin: 0 0 16px;
-  color: #212121;
   font-weight: 600;
   font-size: 28px;
   line-height: 36px;
@@ -514,7 +513,6 @@ button {
 
 .join_description {
   margin: 0 0 16px;
-  color: #212121;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -530,7 +528,7 @@ button {
   padding: 0;
   border: none;
   border-radius: 8px;
-  color: #ffffff;
+  color: var(--main-background-color);
   background-color: #e32359;
   font-weight: 500;
   font-size: 16px;
@@ -554,12 +552,55 @@ button {
   max-width: 100%;
   height: auto;
 }
+/*=============================================================================*/
+/*============================================
+                CATEGORIES - SECTION
+============================================*/
+.categories_content {
+  margin-top: 64px;
+}
+
+.categories_title {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.categories_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 16px;
+}
+
+.categories_box {
+  flex: 0 0 135px;
+  width: 135px;
+  height: 112px;
+  padding-top: 22px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: var(--box-background-color);
+}
+
+.categories_box > img {
+  width: 20px;
+  height: 20px;
+}
+
+.categories_box__description {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
 
 /*===========================================
         Экраны от 1024px до 1440px
 =============================================*/
 @media (min-width: 1024px) and (max-width: 1440px) {
-  /*===========================================
+  /*=========================================
             HEADER
 =============================================*/
   .header {
@@ -752,6 +793,32 @@ button {
   .join_image__wrapper {
     justify-content: flex-end;
   }
+
+  /*============================================
+                CATEGORIES - SECTION
+============================================*/
+  .categories_content {
+    margin-top: clamp(48px, 4.23vw, 64px);
+  }
+
+  .categories_title {
+    margin-bottom: clamp(20px, 1.59vw, 24px);
+    font-size: clamp(24px, 1.85vw, 28px);
+    line-height: clamp(30px, 2.38vw, 36px);
+  }
+
+  .categories_container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: clamp(16px, 2vw, 36px);
+    row-gap: 16px;
+  }
+
+  .categories_box {
+    flex: 0 0 135px;
+    width: 135px;
+    height: 112px;
+  }
 }
 
 /*==========================================
@@ -937,6 +1004,32 @@ button {
 
   .join_image__wrapper {
     justify-content: center;
+  }
+
+  /*============================================
+                CATEGORIES - SECTION
+============================================*/
+  .categories_content {
+    margin-top: clamp(40px, 4.23vw, 48px);
+  }
+
+  .categories_title {
+    margin-bottom: clamp(20px, 2.35vw, 24px);
+    font-size: clamp(22px, 2.73vw, 28px);
+    line-height: clamp(30px, 3.52vw, 36px);
+  }
+
+  .categories_container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: clamp(16px, 3vw, 32px);
+    row-gap: 16px;
+  }
+
+  .categories_box {
+    flex: 0 0 135px;
+    width: 135px;
+    height: 112px;
   }
 }
 
@@ -1242,6 +1335,44 @@ button {
     width: 192px;
     height: 40px;
     margin: 22px auto 0;
+  }
+
+  /*============================================
+                CATEGORIES - SECTION
+============================================*/
+  .categories_content {
+    margin-top: 32px;
+  }
+
+  .categories_title {
+    margin-top: 16px;
+    margin-bottom: 23px;
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .categories_container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: clamp(23px, 3vw, 32px);
+    row-gap: 16px;
+  }
+
+  .categories_box {
+    flex: 0 0 135px;
+    width: 135px;
+    height: 112px;
+    padding-top: 22px;
+  }
+
+  .categories_box > img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .categories_box__description {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
@@ -1588,5 +1719,23 @@ button {
     width: 192px;
     height: 40px;
     margin: 22px auto 0;
+  }
+
+  /*============================================
+                CATEGORIES - SECTION
+============================================*/
+  .categories_container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 135px);
+    column-gap: 23px;
+    row-gap: 16px;
+    justify-content: center;
+  }
+
+  .categories_box {
+    width: 135px;
+    height: 112px;
+    flex: none;
   }
 }
