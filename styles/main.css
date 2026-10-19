@@ -639,6 +639,60 @@ button {
   line-height: 28px;
   text-align: center;
 }
+/*===========================================================================*/
+/*===========================================
+        HOW IT WORKS - SECTION
+=============================================*/
+.how_it_works__section {
+  margin-top: 64px;
+}
+
+.how_it_works__title {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.how_it_works__container {
+  display: flex;
+  gap: 32px;
+}
+
+.how_it_works__box {
+  display: flex;
+  max-width: 580px;
+  padding: 32px 129px 24px 24px;
+  border-radius: 8px;
+  gap: 24px;
+  background-color: var(--box-background-color);
+}
+
+.how_it_works__img {
+  width: 41px;
+  height: 41px;
+}
+
+.how_it_works__box__title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.how_it_works__description {
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.how_it_works__link {
+  color: var(--btn-blue);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
 
 /*===========================================
         Экраны от 1024px до 1440px
@@ -892,6 +946,50 @@ button {
   .cities_box {
     flex: 0 0 205px;
   }
+
+  /*===========================================
+        HOW IT WORKS - SECTION
+=============================================*/
+  .how_it_works__title {
+    margin-bottom: clamp(20px, 1.67vw, 24px);
+    font-size: clamp(24px, 1.95vw, 28px);
+    line-height: clamp(30px, 2.5vw, 36px);
+  }
+
+  .how_it_works__container {
+    gap: clamp(24px, 2.23vw, 32px);
+  }
+
+  .how_it_works__box {
+    gap: clamp(18px, 1.67vw, 24px);
+    padding-top: clamp(24px, 2.23vw, 32px);
+    padding-right: clamp(40px, 8.96vw, 129px);
+    padding-bottom: clamp(20px, 1.67vw, 24px);
+    padding-left: clamp(20px, 1.67vw, 24px);
+  }
+
+  .how_it_works__img {
+    flex-basis: clamp(32px, 2.85vw, 41px);
+    width: clamp(32px, 2.85vw, 41px);
+    height: clamp(32px, 2.85vw, 41px);
+  }
+
+  .how_it_works__box__title {
+    margin-bottom: clamp(12px, 1.11vw, 16px);
+    font-size: clamp(17px, 1.39vw, 20px);
+    line-height: clamp(21px, 1.67vw, 24px);
+  }
+
+  .how_it_works__description {
+    margin-bottom: clamp(12px, 1.11vw, 16px);
+    font-size: clamp(14px, 1.11vw, 16px);
+    line-height: 24px;
+  }
+
+  .how_it_works__link {
+    font-size: clamp(14px, 1.11vw, 16px);
+    line-height: 24px;
+  }
 }
 
 /*==========================================
@@ -1132,6 +1230,47 @@ button {
 
   .cities_box {
     flex: 0 0 205px;
+  }
+
+  /*===========================================
+        HOW IT WORKS - SECTION
+=============================================*/
+  .how_it_works__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .how_it_works__container {
+    gap: 20px;
+  }
+
+  .how_it_works__box {
+    gap: 16px;
+    padding: 24px 24px 20px;
+  }
+
+  .how_it_works__img {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .how_it_works__box__title {
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .how_it_works__description {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .how_it_works__link {
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
@@ -1520,6 +1659,59 @@ button {
     margin-top: 16px;
     font-size: 18px;
     line-height: 24px;
+  }
+
+  /*===========================================
+        HOW IT WORKS - SECTION
+=============================================*/
+  .how_it_works__title {
+    margin-bottom: 18px;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .how_it_works__container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .how_it_works__box {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    gap: 14px;
+    padding: 20px;
+  }
+
+  .how_it_works__img {
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .how_it_works__box__title {
+    margin-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14.93px;
+  }
+
+  .how_it_works__description {
+    margin-bottom: 10px;
+
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14.93px;
+  }
+
+  .how_it_works__link {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 14.93px;
   }
 }
 
@@ -1936,5 +2128,65 @@ button {
     font-size: 18px;
     line-height: 24px;
     text-align: center;
+  }
+
+  /*===========================================
+        HOW IT WORKS - SECTION
+=============================================*/
+  .how_it_works__section {
+    padding-left: 10px;
+  }
+
+  .how_it_works__title {
+    margin: 0 0 18px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .how_it_works__container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .how_it_works__box {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    gap: 12px;
+    padding: 20px 70px 15px 15px;
+    border-radius: 8px;
+  }
+
+  .how_it_works__img {
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .how_it_works__info {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .how_it_works__box__title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .how_it_works__description {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  .how_it_works__link {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 15px;
   }
 }
