@@ -595,6 +595,50 @@ button {
   line-height: 24px;
   text-align: center;
 }
+/*===========================================================================*/
+/*===========================================
+                POPULAR CITY - SECTION
+=============================================*/
+.city_section {
+  margin-top: 64px;
+}
+
+.city_title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.city_description {
+  margin-bottom: 28px;
+  color: #707070;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cities_container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 41px;
+}
+
+.cities_img {
+  display: block;
+  width: 205px;
+  height: 205px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cities_title {
+  margin-top: 24px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+}
 
 /*===========================================
         Экраны от 1024px до 1440px
@@ -819,6 +863,35 @@ button {
     width: 135px;
     height: 112px;
   }
+
+  /*===========================================
+                POPULAR CITY - SECTION
+=============================================*/
+  .city_section {
+    margin-top: clamp(48px, 4.45vw, 64px);
+  }
+
+  .city_title {
+    margin-bottom: clamp(14px, 1.11vw, 16px);
+    font-size: clamp(24px, 1.95vw, 28px);
+    line-height: clamp(30px, 2.5vw, 36px);
+  }
+
+  .city_description {
+    margin-bottom: clamp(22px, 1.95vw, 28px);
+    font-size: clamp(14px, 1.11vw, 16px);
+    line-height: 24px;
+  }
+
+  .cities_container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .cities_box {
+    flex: 0 0 205px;
+  }
 }
 
 /*==========================================
@@ -1030,6 +1103,35 @@ button {
     flex: 0 0 135px;
     width: 135px;
     height: 112px;
+  }
+
+  /*===========================================
+                POPULAR CITY - SECTION
+=============================================*/
+  .city_section {
+    margin-top: 48px;
+  }
+
+  .city_title {
+    margin-bottom: 14px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .city_description {
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .cities_container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .cities_box {
+    flex: 0 0 205px;
   }
 }
 
@@ -1372,6 +1474,51 @@ button {
 
   .categories_box__description {
     font-size: 16px;
+    line-height: 24px;
+  }
+
+  /*===========================================
+                POPULAR CITY - SECTION
+=============================================*/
+  .city_section {
+    margin-top: 32px;
+  }
+
+  .city_title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .city_description {
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .cities_container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 28px;
+  }
+
+  .cities_box {
+    width: 180px;
+    min-width: 0;
+  }
+
+  .cities_img {
+    width: 180px;
+    height: 180px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .cities_title {
+    margin-top: 16px;
+    font-size: 18px;
     line-height: 24px;
   }
 }
@@ -1737,5 +1884,57 @@ button {
     width: 135px;
     height: 112px;
     flex: none;
+  }
+
+  /*===========================================
+                POPULAR CITY - SECTION
+=============================================*/
+  .city_section {
+    margin-top: 16px;
+  }
+
+  .city_container {
+    padding-left: 11px;
+  }
+
+  .city_title {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .city_description {
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .cities_container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 15px;
+    column-gap: 18px;
+    row-gap: 28px;
+  }
+
+  .cities_box {
+    width: 154px;
+  }
+
+  .cities_img {
+    display: block;
+    width: 154px;
+    height: 154px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .cities_title {
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
   }
 }
