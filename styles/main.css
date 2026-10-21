@@ -620,8 +620,7 @@ button {
 
 .cities_container {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 41px;
+  gap: 16px;
 }
 
 .cities_img {
@@ -699,6 +698,7 @@ button {
 =============================================*/
 .friendships_section {
   margin-top: 64px;
+  margin-bottom: 64px;
 }
 
 .friendships_title {
@@ -718,14 +718,14 @@ button {
 
 .friendships_container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 23px;
 }
 
 .friendships_box {
   display: flex;
   flex-direction: column;
-  max-width: 375px;
+  /* width: 375px; */
 }
 
 .friendships_img {
@@ -757,9 +757,127 @@ button {
   font-size: 16px;
   line-height: 24px;
 }
+/*==========================================================================*/
+/*===========================================
+            FOOTER
+=============================================*/
+.footer {
+  padding-top: 24px;
+  padding-bottom: 40px;
+  padding-right: clamp(48px, 12.96vw, 196px);
+  padding-left: clamp(48px, 12.96vw, 196px);
+  color: #f6f7f8;
+  background-color: var(--main-color);
+}
+
+.footer_content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0 25px;
+}
+
+.footer_title {
+  padding: 10px 16px 10px 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.footer_btn {
+  width: 119px;
+  height: 44px;
+  padding: 10px 14px;
+  color: var(--main-background-color);
+  border-radius: 8px;
+  border: 3px solid var(--main-background-color);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.footer_btn:hover {
+  background-color: #4b4949;
+}
+
+.footer_line {
+  margin-bottom:;
+  border: 1px solid #707070;
+}
+
+.footer_info {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 24px 0;
+}
+
+.footer_links {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 33.333%;
+  max-width: 373px;
+}
+
+.footer_links__title {
+  margin-bottom: 7px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer_links > a {
+  color: #c5c4c4;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.footer_social_media {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.footer_social_media__link > h5 {
+  margin-bottom: 12px;
+  color: #f6f7f8;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer_social_media__link > a {
+  padding-right: 32px;
+}
+
+.footer_social_media__link > img {
+  display: block;
+  gap: 32px;
+}
+
+.footer_download {
+  margin: 25px 0;
+  gap: 12px;
+}
+
+.footer_footer {
+  display: flex;
+  gap: 24px;
+}
+
+.footer_footer > a {
+  color: #c5c4c4;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
 
 /*===========================================
-        Экраны от 1024px до 1440px
+        Экраны от 1024px до 1439px
 =============================================*/
 @media (min-width: 1024px) and (max-width: 1440px) {
   /*=========================================
@@ -795,10 +913,9 @@ button {
 ===========================================*/
   .platform_container {
     grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
-    padding-top: clamp(50px, 4.6vw, 69px);
-    padding-right: clamp(140px, 14vw, 280px);
+    margin-top: 45px;
     padding-bottom: clamp(75px, 8.1vw, 123px);
-    padding-left: clamp(75px, 10.45vw, 158px);
+    padding: 0 50px clamp(75px, 8.1vw, 123px);
     gap: clamp(32px, 3.05vw, 46px);
   }
 
@@ -825,9 +942,7 @@ button {
   }
 
   .main {
-    padding-right: clamp(110px, 5vw, 180px);
-    padding-bottom: clamp(75px, 8.1vw, 123px);
-    padding-left: clamp(75px, 10.45vw, 158px);
+    padding: 0 50px clamp(75px, 8.1vw, 123px);
   }
 
   /*=========================================
@@ -1003,7 +1118,6 @@ button {
 
   .cities_container {
     flex-wrap: wrap;
-    justify-content: center;
     gap: 32px;
   }
 
@@ -1058,17 +1172,16 @@ button {
   /*===========================================
                 FRIENDSHIPS - SECTION
 =============================================*/
-  .friendships_section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .friendships_container {
+    flex-wrap: wrap;
+    gap: 18px;
   }
 
-  .friendships_container {
+  .friendships_box {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 45px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 375px;
   }
 
   .friendships_title {
@@ -1077,10 +1190,30 @@ button {
   }
 
   .friendships_description {
-    padding-left: 60px;
-    padding-right: 60px;
     font-size: clamp(14px, 1.11vw, 16px);
     line-height: 24px;
+  }
+
+  .friendships_img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /*===========================================
+            FOOTER
+=============================================*/
+  .footer_info {
+    margin-top: clamp(20px, 1.67vw, 24px);
+    margin-bottom: clamp(28px, 2.5vw, 36px);
+  }
+
+  .footer_social_media {
+    margin-bottom: clamp(20px, 1.67vw, 24px);
+  }
+
+  .footer_footer {
+    gap: clamp(16px, 1.67vw, 24px);
   }
 }
 
@@ -1138,7 +1271,6 @@ button {
 
   .main {
     padding-right: clamp(50px, 4.7vw, 140px);
-    padding-bottom: clamp(55px, 7.35vw, 74px);
     padding-left: clamp(45px, 8.2vw, 74px);
   }
 
@@ -1372,14 +1504,6 @@ button {
     margin-top: 55px;
   }
 
-  .friendships_section,
-  .friendships_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   .friendships_container {
     gap: 32px;
   }
@@ -1402,9 +1526,43 @@ button {
   }
 
   .friendships_description {
-    padding: 0 40px;
     font-size: 14px;
     line-height: 22px;
+  }
+
+  /*===========================================
+            FOOTER
+=============================================*/
+  .footer {
+    padding: 0 35px;
+  }
+
+  .footer_info {
+    margin: 20px 0;
+  }
+
+  .footer_links {
+    min-width: 0;
+    width: 33.333%;
+    max-width: 373px;
+  }
+
+  .footer_social_media {
+    justify-content: space-between;
+  }
+
+  .footer_social_media__link {
+    gap: 15px;
+  }
+
+  .footer_footer {
+    gap: 12px;
+  }
+
+  .footer_footer__link,
+  .footer_footer_link {
+    font-size: 12px;
+    line-height: 24px;
   }
 }
 
@@ -1772,8 +1930,9 @@ button {
   }
 
   .cities_container {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     column-gap: 18px;
     row-gap: 28px;
   }
@@ -1889,6 +2048,33 @@ button {
   .friendships_container__description {
     font-size: 12px;
     line-height: 23px;
+  }
+
+  /*===========================================
+            FOOTER
+=============================================*/
+  .footer {
+    padding: 0 25px;
+  }
+
+  .footer_content {
+    justify-content: space-between;
+  }
+
+  .footer_line {
+    max-width: 80%;
+  }
+
+  .footer_info {
+    margin: 15px 0 20px;
+  }
+
+  .footer_download {
+    display: none;
+  }
+
+  .footer_footer__link {
+    display: none;
   }
 }
 
@@ -2421,5 +2607,37 @@ button {
   .friendships_link {
     font-size: 12px;
     line-height: 23px;
+  }
+
+  /*===========================================
+            FOOTER
+=============================================*/
+  .footer {
+    padding: 20px 8px 36px 15px;
+  }
+
+  .footer_content {
+    justify-content: space-between;
+  }
+
+  .footer_info {
+    margin: 10px 0 20px;
+  }
+
+  .footer_line {
+    max-width: 66%;
+  }
+
+  .footer_links_description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .footer_download {
+    display: none;
+  }
+
+  .footer_footer__link {
+    display: none;
   }
 }
