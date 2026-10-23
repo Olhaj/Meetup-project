@@ -5,11 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filter page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/filter.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
 </head>
 
 <body>
+    <div id="header"></div>
+    <main class="main">
+        <section class="events_section">
+            <div class="events_info">
+                <h2 class="events_title">Events near New York, NY</h2>
+                <a class="events_link" href="./main.html">Events</a>
+                <div class="events_filters">
+                    <select id="type_filter" aria-label="Filter by event type">
+                        <option value="">Any type</option>
+                        <option value="online">Online</option>
+                        <option value="offline">Offline</option>
+                    </select>
 
+                    <select id="date_filter" aria-label="Filter by date">
+                        <option value="">Any date</option>
+                    </select>
+
+                    <select id="distance_filter" aria-label="Filter by distance">
+                        <option value="">Any distance</option>
+                        <option value="5">5 km</option>
+                        <option value="10">10 km</option>
+                        <option value="15">15 km</option>
+                        <option value="25">25 km</option>
+                        <option value="50">50 km</option>
+                        <option value="75">75 km</option>
+                        <option value="100">100 km</option>
+                    </select>
+
+                    <select id="category_filter" aria-label="Filter by category">
+                        <option value="">Any category</option>
+                        <option value="Business">Business</option>
+                        <option value="Travel and Outdoor">Travel and Outdoor</option>
+                        <option value="Social Activities">Social Activities</option>
+                        <option value="Hobbies and Passions">Hobbies and Passions</option>
+                        <option value="Sports and Fitness">Sports and Fitness</option>
+                        <option value="Health and Wellbeing">Health and Wellbeing</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Art and Culture">Art and Culture</option>
+                        <option value="Games">Games</option>
+                    </select>
+                </div>
+                <p class="results_count" id="resultsCount"></p>
+                <div class="events_list" id="eventsResults"></div>
+            </div>
+
+            <div class="map_area">
+                <div class="map_caption">
+                    <p>Find events near</p>
+                    <h3>New York, NY</h3>
+                </div>
+                <aside class="map_card" id="mapCard">
+                    <button class="map_dismiss" id="dismissMap" type="button" aria-label="Скрыть карту">
+                        &times;
+                    </button>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.35196272633!2d-73.97950600000001!3d40.697141499999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2z0J3RjNGOLdCZ0L7RgNC6LCDQodCo0JA!5e0!3m2!1sru!2sie!4v1792668388973!5m2!1sru!2sie"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/filter.js"></script>
 </body>
 
 </html>
